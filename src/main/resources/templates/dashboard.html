@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Medico Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div th:replace="~{fragments/sidebar :: sidebar}"></div>
+
+<div class="main-content">
+
+    <div class="topbar">
+        <h1>Dashboard</h1>
+        <p>Welcome back, Admin!</p>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="stat-card blue">
+                <div class="icon-box">📂</div>
+
+                <div>
+                    <h5>Total Categories</h5>
+                    <h2 th:text="${categoryCount}">0</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stat-card green">
+                <div class="icon-box">🩺</div>
+
+                <div>
+                    <h5>Total Diseases</h5>
+                    <h2 th:text="${diseaseCount}">0</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stat-card red">
+                <div class="icon-box">💊</div>
+
+                <div>
+                    <h5>Total Drugs</h5>
+                    <h2 th:text="${drugCount}">0</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="welcome-card">
+        <h3>Welcome to Medico Admin Panel</h3>
+        <p>
+            Manage Categories, Diseases and Drugs efficiently from this dashboard.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
